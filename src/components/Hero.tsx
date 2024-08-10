@@ -4,7 +4,7 @@ import heroimage from "../assets/portfolio.png";
 
 export const Hero = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-[1200px] md:h-[70vh] py-8 mx-auto bg-black">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-[1200px] md:h-[100vh] py-8 mx-auto bg-black">
       <div className="col-span-1 my-auto mx-auto w-[300px] h-auto lg:w-[400px]">
         <img src={heroimage} alt="hero" />
       </div>
@@ -31,9 +31,20 @@ export const Hero = () => {
           development.
         </p>
         <div className="my-8">
-          <a href="/" className="px-6 py-3 w-full rounded-xl mr-4 bg-gradient-to-br from-orange-400 to-pink-500 text-white">
-          Download CV</a>
-          <a href="#contact" className="px-6 py-3 w-full rounded-xl mr-4 border border-gray-400 hover:bg-gradtiant-to-br from-orange-400 to-pink-500  text-white hover:border-none">Contact</a>
+          <a
+            href="/cv.pdf"
+            className="px-6 py-3 w-full rounded-xl mr-4 bg-gradient-to-br from-orange-400 to-pink-500 text-white"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download CV
+          </a>
+          <a
+            href="#contact"
+            className="px-6 py-3 w-full rounded-xl mr-4 border border-gray-400 hover:bg-gradient-to-br from-orange-400 to-pink-500  text-white hover:border-none"
+          >
+            Contact
+          </a>
         </div>
       </div>
     </div>
