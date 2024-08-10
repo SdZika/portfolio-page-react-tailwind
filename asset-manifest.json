@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/portfolio-page-react-tailwind/static/css/main.3e6c66cf.css",
+    "main.js": "/portfolio-page-react-tailwind/static/js/main.dee28f36.js",
+    "static/media/proj3.png": "/portfolio-page-react-tailwind/static/media/proj3.bfbb6f00aaf112d6497f.png",
+    "static/media/portfolio.png": "/portfolio-page-react-tailwind/static/media/portfolio.d9e0f5975154e2862823.png",
+    "static/media/about.jpg": "/portfolio-page-react-tailwind/static/media/about.58c937d5aecc886c2ff3.jpg",
+    "static/media/proj2.png": "/portfolio-page-react-tailwind/static/media/proj2.bd8af428e19342be96fe.png",
+    "static/media/react.png": "/portfolio-page-react-tailwind/static/media/react.0cf951a69d8e58f83f9d.png",
+    "static/media/proj1.png": "/portfolio-page-react-tailwind/static/media/proj1.63ddff7110688ba6009a.png",
+    "static/media/html.png": "/portfolio-page-react-tailwind/static/media/html.2ba4fabc69a89a8f71e6.png",
+    "static/media/tailwind.png": "/portfolio-page-react-tailwind/static/media/tailwind.e47ac876b8d4d0bba47a.png",
+    "static/media/css.png": "/portfolio-page-react-tailwind/static/media/css.69a82c2d9e45c933a9cb.png",
+    "static/media/javascript.png": "/portfolio-page-react-tailwind/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
+    "index.html": "/portfolio-page-react-tailwind/index.html",
+    "main.3e6c66cf.css.map": "/portfolio-page-react-tailwind/static/css/main.3e6c66cf.css.map",
+    "main.dee28f36.js.map": "/portfolio-page-react-tailwind/static/js/main.dee28f36.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e6c66cf.css",
+    "static/js/main.dee28f36.js"
+  ]
+}
