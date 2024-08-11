@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfoli_page_react_tailwind=self.webpackChunkportfoli_page_react_tailwind||[]).push([[952],{952:e=>{e.exports=function(){throw new Error("ws does not work in the browser. Browser clients must use the native WebSocket object")}}}]);
+//# sourceMappingURL=952.e2de0f61.chunk.js.map
