@@ -1,8 +1,8 @@
 import { About } from "./components/About";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
-import { Contact } from "./Contact";
-import { Footer } from "./Footer";
+import { Contact } from "./components/Contact";
+import { Footer } from "./components/Footer";
 import { Skills } from "./Skills";
 import { Work } from "./Work";
 
