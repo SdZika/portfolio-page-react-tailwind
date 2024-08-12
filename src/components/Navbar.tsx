@@ -19,8 +19,12 @@ export const Navbar = () => {
           <a href="#work">Work</a>{" "}
         </li>
         <li className="p-5">
+          <a href="#blog">Blog</a>
+        </li>
+        <li className="p-5">
           <a href="#contact">Contact</a>{" "}
         </li>
+      
       </ul>
 
       <div onClick={handleNav} className="block md:hidden mr-6">
@@ -42,7 +46,9 @@ export const Navbar = () => {
           <li className="p-2">
             <a href="#work">Work</a>
           </li>
-
+          <li className="p-2">
+            <a href="#blog">Blog</a>
+          </li>
           <li className="p-2">
             <a href="#contact">Contact</a>
           </li>

@@ -6,44 +6,49 @@ export const Contact: FC = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [formError, setFormError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
+  
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    
     const isValidEmail = (email: string) =>
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+    setNameError(!name);
+    setEmailError(!email || !isValidEmail(email));
+    setMessageError(!message);
+
     if (!name || !email || !message || !isValidEmail(email)) {
       setFormError("Please fill in all fields correctly.");
+      setSuccessMessage(null);
+      console.log("Form validation failed");
       return;
     }
 
-    try {
-      const { data, error } = await supabase
-        .from("contacts")
-        .insert([{ name, message, email }]);
+    console.log("Form is valid, sending data...");
 
-      if (error) {
-        console.log("Error inserting data:", error);
-        setFormError(
-          "There was an issue submitting the form. Please try again."
-        );
-      }
+    const { data, error } = await supabase
+      .from("contacts")
+      .insert([{ name, message, email }]);
 
-      if (data) {
-        console.log("Form submission successful:", data);
-        setFormError(null);
-        setName("");
-        setEmail("");
-        setMessage("");
-        alert("Thank you for your message! We will back to you soon!");
-      }
-    } catch (err) {
-      console.error("Network error:", err);
+    if (error) {
       setFormError(
-        "Network error. Please check your connection or try again later."
+        error.message || "There was an issue submitting the form. Please try again."
       );
+      setSuccessMessage(null);
     }
+    
+    setFormError(null);
+    setSuccessMessage("Thank you for your message! We will get back to you soon.");
+    setName("");
+    setEmail("");
+    setMessage("");
+    
   };
 
   return (
@@ -68,7 +73,9 @@ export const Contact: FC = () => {
                       value={name}
                       placeholder="Your Name"
                       onChange={(e) => setName(e.target.value)}
-                      className="bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border border-gray-700 rounded-md focus:outline-none focus:border-pink-600"
+                      className={`bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border ${
+                        nameError ? "border-2 border-red-500" : "border-gray-700"
+                      } rounded-md focus:outline-none focus:border-pink-600`}
                     />
                   </div>
                 </div>
@@ -82,7 +89,9 @@ export const Contact: FC = () => {
                       value={email}
                       placeholder="Your Email"
                       onChange={(e) => setEmail(e.target.value)}
-                      className="bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border border-gray-700 rounded-md focus:outline-none focus:border-pink-600"
+                      className={`bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border ${
+                        emailError ? "border-2 border-red-500" : "border-gray-700"
+                      } rounded-md focus:outline-none focus:border-pink-600`}
                     />
                   </div>
                 </div>
@@ -95,7 +104,9 @@ export const Contact: FC = () => {
                       value={message}
                       placeholder="Your Message"
                       onChange={(e) => setMessage(e.target.value)}
-                      className="bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border border-gray-700 rounded-md focus:outline-none focus:border-pink-600"
+                      className={`bg-[#161616] w-full px-4 py-4 text-gray-400 placeholder-gray-400 border ${
+                        messageError ? "border-2 border-red-500" : "border-gray-700"
+                      } rounded-md focus:outline-none focus:border-pink-600`}
                     ></textarea>
                   </div>
                 </div>
@@ -110,6 +121,9 @@ export const Contact: FC = () => {
                 </div>
               </div>
               {formError && <p className="text-red-500 mt-4">{formError}</p>}
+              {successMessage && (
+                <p className="text-green-500 mt-4">{successMessage}</p>
+              )}
             </form>
           </div>
         </div>
