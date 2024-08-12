@@ -1,4 +1,4 @@
-import React, { FC, useState, FormEvent } from "react";
+import { FC, useState, FormEvent } from "react";
 import supabase from "../config/supabaseClient";
 
 export const Contact: FC = () => {
@@ -17,7 +17,7 @@ export const Contact: FC = () => {
     e.preventDefault();
     
     const isValidEmail = (email: string) =>
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); //to do!!!!
 
     setNameError(!name);
     setEmailError(!email || !isValidEmail(email));
@@ -32,7 +32,7 @@ export const Contact: FC = () => {
 
     console.log("Form is valid, sending data...");
 
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("contacts")
       .insert([{ name, message, email }]);
 
