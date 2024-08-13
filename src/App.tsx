@@ -3,8 +3,8 @@ import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import { Skills } from "./Skills";
-import { Work } from "./Work";
+import { Skills } from "./components/Skills";
+import { Work } from "./components/Work";
 import { Blog } from "./pages/Blog";
 
 function App() {

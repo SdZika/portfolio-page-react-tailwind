@@ -1,8 +1,8 @@
 import React from "react";
 
-import proj1 from "./assets/proj1.png";
-import proj2 from "./assets/proj2.png";
-import proj3 from "./assets/proj3.png";
+import proj1 from "../assets/proj1.png";
+import proj2 from "../assets/proj2.png";
+import proj3 from "../assets/proj3.png";
 
 export const Work = () => {
   return (
@@ -19,7 +19,7 @@ export const Work = () => {
               Score Board
             </span>
             <div className="pt-8 text-center">
-              <a href="/" target="_blank" rel="noreferrer">
+              <a href="https://sdzika.github.io/react-score-board/" target="_blank" rel="noreferrer">
                 <button className="text-center rounded-lg px-4 py-3 bg-white text-gray-700 font-bold text-lg">
                   Live
                 </button>
@@ -35,7 +35,7 @@ export const Work = () => {
               Fitnes Tracker
             </span>
             <div className="pt-8 text-center">
-              <a href="/" target="_blank" rel="noreferrer">
+              <a href="https://sdzika.github.io/workout-logging-form/" target="_blank" rel="noreferrer">
                 <button className="text-center rounded-lg px-4 py-3 bg-white text-gray-700 font-bold text-lg">
                   Live
                 </button>
