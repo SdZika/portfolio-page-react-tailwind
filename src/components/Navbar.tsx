@@ -8,6 +8,10 @@ export const Navbar = () => {
     setNav(!nav);
   };
 
+  const handleNavItemClick = () => {
+    setNav(false);
+  };
+
   return (
     <div className="border-b border-gray-600 bg-black text-gray-400 h-[100px] max-w-[1200px] mx-auto flex justify-between items-center">
       <h1 className="text-3xl font-bold primary-color ml-4">M.Z</h1>
@@ -41,16 +45,16 @@ export const Navbar = () => {
         <h1 className="text-3xl text-primary-color m-4">M.Z</h1>
         <ul className="p-8 text-2xl">
           <li className="p-2">
-            <a href="#about">About</a>
+            <a href="#about" onClick={handleNavItemClick}>About</a>
           </li>
           <li className="p-2">
-            <a href="#work">Work</a>
+            <a href="#work" onClick={handleNavItemClick}>Work</a>
           </li>
           <li className="p-2">
-            <a href="#blog">Blog</a>
+            <a href="#blog"onClick={handleNavItemClick} >Blog</a>
           </li>
           <li className="p-2">
-            <a href="#contact">Contact</a>
+            <a href="#contact" onClick={handleNavItemClick}>Contact</a>
           </li>
         </ul>
       </div>
