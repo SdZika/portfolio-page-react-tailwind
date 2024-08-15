@@ -1,5 +1,5 @@
 import { FC, useState, FormEvent } from "react";
-import supabase from "../config/supabaseClient";
+import { supabase } from "../config/supabaseClient";
 
 export const Contact: FC = () => {
   const [name, setName] = useState("");
@@ -15,6 +15,11 @@ export const Contact: FC = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!supabase) {
+      setFormError("Service is currently unavailable. Please try again later.");
+      return;
+    }
     
     const isValidEmail = (email: string) =>
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); //to do!!!!
