@@ -8,7 +8,7 @@ export const About = () => {
         <div className="mt-4 md:mt-0 text-left flex">
           <div className="my-auto mx-6">
             <h2 className="text-4xl font-bold mb-4 primary-color">About me</h2>
-            <p className="text-base lg:text-lg">
+            <p className="text-base lg:text-lg pb-10">
               I work with companies and agencies around the world, building Web
               user interfaces and digital products with focus on responsive
               design, accessibility, performance, and cutting-edge tech.
@@ -17,7 +17,7 @@ export const About = () => {
         </div>
 
         <img
-          className="mx-auto rounded-3xl py-8 md:py-0"
+          className="mx-auto md:py-0 rounded-3xl"
           src={aboutImg}
           width={300}
           height={300}
