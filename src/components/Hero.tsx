@@ -4,7 +4,7 @@ import heroimage from "../assets/portfolio.png";
 
 export const Hero = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-[1200px] md:h-[100vh] py-8 mx-auto bg-black">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-[1200px] md:h-[100vh] py-12 mx-auto bg-black">
       <div className="col-span-1 my-auto mx-auto w-[300px] h-auto lg:w-[400px]">
         <img src={heroimage} alt="hero" />
       </div>
