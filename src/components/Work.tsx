@@ -1,8 +1,7 @@
-import React from "react";
-
 import { myWorks } from "./Data";
 
 export const Work = () => {
+  const filterdWorks = myWorks.filter((work, index) => index < 3);
   return (
     <div className="max-w-[1200px] mx-auto py-12" id="work">
       <div className="pb-8">
@@ -10,7 +9,7 @@ export const Work = () => {
         <p className="text-gray-400 mx-6">Check out some of my recent work</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-6">
-        {myWorks.map((mywork, index) => (
+        {filterdWorks.map((mywork, index) => (
           <div
             className="transform transition-transform duration-300 hover:scale-105 overflow-hidden shadow-lg shadow-[#040c16] group rounded-md flex justify-center items-center bg-cover relative"
             key={mywork.id}

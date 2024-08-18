@@ -1,4 +1,3 @@
-import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import heroimage from "../assets/portfolio.png";
 
@@ -8,7 +7,7 @@ export const Hero = () => {
       <div className="col-span-1 my-auto mx-auto w-[300px] h-auto lg:w-[400px]">
         <img src={heroimage} alt="hero" />
       </div>
-      <div className="col-span-2 px-5 my-auto">
+      <div className="col-span-2 px-5 my-auto ">
         <h1 className="text-white text-4xl sm:text-5xl lg:text-8xl font-extrabold">
           <span className="primary-color">I'm a </span>
           <br />

@@ -23,6 +23,8 @@ export const Blog = () => {
       });
   }, []);
 
+  const filterdBlogs = blogs.filter((blog, index) => index < 3);
+
   return (
     <div className="max-w-[1200px] mx-auto py-12" id="blog">
       <div className="pb-8 mx-6">
@@ -31,8 +33,8 @@ export const Blog = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-6">
-        {blogs &&
-          blogs.map((blog, index) => (
+        {filterdBlogs &&
+          filterdBlogs.map((blog, index) => (
             <a href={blog.url} target="_blank" rel="noreferrer">
               <article
                 key={index}
