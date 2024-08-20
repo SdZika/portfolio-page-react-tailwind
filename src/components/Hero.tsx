@@ -31,7 +31,7 @@ export const Hero = () => {
         </p>
         <div className="my-8">
           <a
-            href="/cv.pdf"
+            href="cv.pdf"
             download="cv.pdf"
             className="px-6 py-3 w-full rounded-xl mr-4 bg-gradient-to-br from-orange-400 to-pink-500 text-white"
             target="_blank"
