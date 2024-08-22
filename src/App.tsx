@@ -6,13 +6,16 @@ import { Footer } from "./components/Footer";
 import { Skills } from "./components/Skills";
 import { Work } from "./components/Work";
 import { Blog } from "./pages/Blog";
+import { skillList } from "./components/Data/SkillList";
+
 
 function App() {
   return (
     <div>
       <Navbar />
       <Hero />
-      <Skills />
+      <Skills skills={skillList}/>
+     
       <About />
       <Work />
       <Blog />

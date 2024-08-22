@@ -1,4 +1,4 @@
-import { myWorks } from "./Data";
+import { myWorks } from "./Data/Works";
 
 export const Work = () => {
   const filterdWorks = myWorks.filter((work, index) => index < 3);

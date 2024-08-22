@@ -14,11 +14,9 @@ export const Hero = () => {
           <TypeAnimation
             sequence={[
               "Front Dev",
-              1000,
-              "Webdesigner",
-              1000,
+              1500,
               "Web Engineer",
-              1000,
+              1500,
             ]}
             wrapper="span"
             speed={20}
