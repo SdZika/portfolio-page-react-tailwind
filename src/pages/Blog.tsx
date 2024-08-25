@@ -5,6 +5,7 @@ interface BlogPost {
   description: string;
   blogs: any;
   url: string;
+  id: number;
 }
 
 export const Blog = () => {
@@ -15,7 +16,7 @@ export const Blog = () => {
       .then((response) => {
         return response.json();
       })
-      .then((data: any) => {
+      .then((data: BlogPost[]) => {
         setBlogs(data);
       })
       .catch((error) => {
@@ -35,11 +36,8 @@ export const Blog = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-6">
         {filterdBlogs &&
           filterdBlogs.map((blog, index) => (
-            <a href={blog.url} target="_blank" rel="noreferrer">
-              <article
-                key={index}
-                className="bg-[#161616] p-6 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105"
-              >
+            <a key={blog.id} href={blog.url} target="_blank" rel="noreferrer">
+              <article className="bg-[#161616] p-6 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
                 <h2 className="text-2xl font-semibold text-primary-color mb-4">
                   {blog.title}
                 </h2>
