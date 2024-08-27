@@ -6,7 +6,7 @@ export const Contact: FC = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [formError, setFormError] = useState<string | null>(null);
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null >(null);
 
   
   const [nameError, setNameError] = useState(false);
@@ -120,6 +120,7 @@ export const Contact: FC = () => {
                   <button
                     type="submit"
                     className="text-xl w-full p-4 mt-2 font-semibold text-white bg-primary-color rounded-md"
+                    disabled={!!successMessage}
                   >
                     Send
                   </button>
