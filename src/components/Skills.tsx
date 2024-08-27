@@ -19,6 +19,11 @@ export const Skills:FC = () => {
     setIsModalOpen(true);
   };
 
+  const closeModal = () => {
+    setHoveredSkill(null);
+    setIsModalOpen(false)
+  }
+
   return (
     <div className="border border-gray-600 bg-black-300 text-gray-400 md:h-[200px] max-w-[1200px] mx-auto grid grid-cols-6 place-items-center md:flex md:justify-between md:items-center">
       <h2 className="text-gray-700 text-xl md:text-4xl font-bold m-4">
@@ -27,16 +32,16 @@ export const Skills:FC = () => {
       {skillList.map((skill) => (
         <div
           key={skill.id}
-          onClick={() => handleMouseEnter(skill)}
+          onMouseEnter={() => handleMouseEnter(skill)}
           
           className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px] transform transition-transform duration-300 hover:scale-105 cursor-pointer"
         >
-            <img src={skill.src} alt={skill.name} />
+            <img src={skill.src} alt={skill.name}  />
           <p className="mt-2">{skill.name}</p>
         </div>
       ))}
       {isModalOpen && hoveredSkill && (
-        <Modal skill={hoveredSkill} setIsModalOpen={setIsModalOpen} />
+        <Modal skill={hoveredSkill} closeModal={closeModal} />
       )}
     </div>
   );
