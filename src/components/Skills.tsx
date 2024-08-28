@@ -11,20 +11,8 @@ interface PropSkill {
 }
 
 export const Skills: FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [hoveredSkill, setHoveredSkill] = useState<PropSkill | null>(null);
+  const [activeSkill, setActiveSkill] = useState<PropSkill | null>(null);
 
-  const handleMouseEnter = (skill: PropSkill) => {
-    setHoveredSkill(skill);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setHoveredSkill(null);
-    setIsModalOpen(false);
-  };
-
-  //need to refactor, it's not good this way, modal should be inside of loop
 
   return (
     <div className="border border-gray-600 bg-black-300 text-gray-400 md:h-[200px] max-w-[1200px] mx-auto grid grid-cols-6 place-items-center md:flex md:justify-between md:items-center">
@@ -34,16 +22,17 @@ export const Skills: FC = () => {
       {skillList.map((skill) => (
         <div
           key={skill.id}
-          onMouseEnter={() => handleMouseEnter(skill)}
+          onMouseEnter={() => setActiveSkill(skill)}
+          onMouseLeave={() => setActiveSkill(null)}
           className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px] transform transition-transform duration-300 hover:scale-105 cursor-pointer"
         >
           <img src={skill.src} alt={skill.name} />
           <p className="mt-2">{skill.name}</p>
+          {activeSkill?.id === skill.id && <Modal skill={skill} closeModal={() => setActiveSkill(null)}/>}
         </div>
+        
       ))}
-      {isModalOpen && hoveredSkill && (
-        <Modal skill={hoveredSkill} closeModal={closeModal} />
-      )}
+      
     </div>
   );
 };

@@ -10,11 +10,11 @@ interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = ({ skill, closeModal }) => {
+  
   return (
-    <div className="z-10 fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
+    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-30 w-[400px]">
       <div
-        onMouseLeave={closeModal}
-        className="mt-10 flex flex-col gap-5  bg-[#161616] p-6 rounded-xl shadow-md max-w-md sm:max-w-lg lg:max-w-xl max-h-[80vh] overflow-y-auto transform transition-transform duration-300 hover:scale-105"
+          className="mt-10 flex flex-col gap-5  bg-[#161616] p-6 rounded-xl transform transition-transform duration-300 hover:scale-105 "
       >
         <h2 className="text-2xl font-semibold text-primary-color mb-4">
           {skill.name}
