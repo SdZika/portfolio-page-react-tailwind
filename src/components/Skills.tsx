@@ -1,7 +1,9 @@
+
 import React, { FC, useState } from "react";
-import { Modal } from "./Modal";
+
 import { skillList } from "./Data/SkillList";
 import { SkillsTitle } from "./Data/SkillsTitle";
+import { DataMap } from "./Data/DataMap";
 
 interface PropSkill {
   id: number;
@@ -14,27 +16,32 @@ interface PropSkill {
 export const Skills: FC = () => {
   const [activeSkill, setActiveSkill] = useState<PropSkill | null>(null);
 
+  const handleMouseEnter = (skill: PropSkill) => {
+    setActiveSkill(skill);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveSkill(null);
+  };
+
+  const closeModal = () => {
+    setActiveSkill(null);
+  };
 
   return (
     <div className="border border-gray-600 bg-black-300 text-gray-400 md:h-[200px] max-w-[1200px] mx-auto grid grid-cols-6 place-items-center md:flex md:justify-between md:items-center">
-      <div className="felx flex-col">
+      <div className="flex flex-col">
         <SkillsTitle title="My Tech" />
         <SkillsTitle title="Stack" />
       </div>
-      {skillList.map((skill) => (
-        <div
-          key={skill.id}
-          onMouseEnter={() => setActiveSkill(skill)}
-          onMouseLeave={() => setActiveSkill(null)}
-          className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px] transform transition-transform duration-300 hover:scale-105 cursor-pointer "
-        >
-          <img src={skill.src} alt={skill.name} className="z-0"/>
-          <p className="mt-2 z-0">{skill.name}</p>
-          {activeSkill?.id === skill.id && <Modal skill={skill} closeModal={() => setActiveSkill(null)}/>}
-        </div>
-        
-      ))}
-      
+
+      <DataMap 
+        datas={skillList}
+        activeSkill={activeSkill}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        closeModal={closeModal}
+      />
     </div>
   );
 };
