@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import { Modal } from "./Modal";
 import { skillList } from "./Data/SkillList";
+import { SkillsTitle } from "./Data/SkillsTitle";
 
 interface PropSkill {
   id: number;
@@ -16,9 +17,10 @@ export const Skills: FC = () => {
 
   return (
     <div className="border border-gray-600 bg-black-300 text-gray-400 md:h-[200px] max-w-[1200px] mx-auto grid grid-cols-6 place-items-center md:flex md:justify-between md:items-center">
-      <h2 className="text-gray-700 text-xl md:text-4xl font-bold m-4">
-        My Tech <br /> Stack
-      </h2>
+      <div className="felx flex-col">
+        <SkillsTitle title="My Tech" />
+        <SkillsTitle title="Stack" />
+      </div>
       {skillList.map((skill) => (
         <div
           key={skill.id}
