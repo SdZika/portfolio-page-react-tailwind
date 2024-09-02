@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { useState } from "react";
 import { Modal } from "./Modal";
 
@@ -10,7 +10,11 @@ interface PropSkill {
   content: string;
 }
 
-export const Skill = ({ skill }: any) => {
+interface SkillProps {
+  skill: PropSkill;
+}
+
+export const Skill: FC<SkillProps> = ({ skill }) => {
   const [activeSkill, setActiveSkill] = useState<PropSkill | null>(null);
 
   return (
@@ -19,10 +23,11 @@ export const Skill = ({ skill }: any) => {
         key={skill.id}
         onMouseEnter={() => setActiveSkill(skill)}
         onMouseLeave={() => setActiveSkill(null)}
-        className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px] transform transition-transform duration-300 hover:scale-105 cursor-pointer "
+        className="flex flex-col items-center m-4 sm:my-0 w-[40px] md:w-[100px]  "
       >
-        <img src={skill.src} alt={skill.name} className="z-0" />
-        <p className="mt-2 z-0">{skill.name}</p>
+        
+        <img src={skill.src} alt={skill.name} className={`${activeSkill?.id === skill.id ? "hidden" : ""}`} />
+        <p className={`mt-2 ${activeSkill?.id === skill.id ? "hidden" : ""}`}>{skill.name}</p>
         {activeSkill?.id === skill.id && (
           <Modal skill={skill} closeModal={() => setActiveSkill(null)} />
         )}
